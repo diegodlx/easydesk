@@ -1,0 +1,782 @@
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --header-color: #333;
+    --label-color: rgba(0, 0, 0, 0.5);
+    --ul-color: rgba(52, 53, 56, 0.95);
+    --background-color: #f9fafb;
+    --button-color: #333;
+    --card-color: #333;
+    --card-button-color: white;
+    --card-button-text-color: #333;
+    --text-color: rgba(0,0,0,0.5);
+    --footer-color: #333;
+    --light-text-color: white;
+    --border-color: #ccc;
+    --dark-text-color: #333;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#inicio,
+#sobre,
+#portfolio {
+  scroll-margin-top: 80px;
+}
+
+/* ------------ HEADER ------------ */
+
+header {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    background-color: var(--header-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 60px 8px 20px;
+}
+
+label {
+    font-size: 2rem;
+    position: fixed;
+    top: 6px;
+    right: 15px;
+    color: var(--label-color);
+}
+
+.container {
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.logo-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo-header img {
+    width: 18%;
+    height: 18%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logo-header p {
+    color: var(--light-text-color);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+nav ul {
+  list-style: none;
+  background-color: var(--ul-color);
+  height: 35vh;
+  position: fixed;
+  top: 60px;
+  right: -100%;
+  width: 100px;
+  transition: all 0.5s;
+}
+
+#check:checked~ul {
+  right: 0;
+}
+
+nav ul li {
+  padding: 20px;
+  text-align: right;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--light-text-color);
+}
+
+#check {
+    display: none;
+}
+
+.scroll-logo {
+  opacity: 0;
+  animation: reveal linear forwards;
+  animation-timeline: scroll();
+  animation-range: 300px 600px;
+}
+
+@keyframes reveal {
+  to { opacity: 1; }
+}
+
+/* ------------ MAIN ------------ */
+
+main {
+    text-align: center;
+    height: 95vh;
+    background-color: var(--background-color);
+    display: flex;
+}
+
+main img {
+    width: 65%;
+    height: auto;
+    border-radius: 50%;
+    border: #333 solid 5px;
+}
+
+main div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 35px;
+}
+
+main div h1 {
+    font-size: 2rem;
+}
+
+main div p {
+    font-size: 1.4rem;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--button-color);
+    color: var(--light-text-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.button:hover {
+    background-color: #555;
+    transform: scale(1.1);
+    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease;
+}
+
+/* ------------ SOBRE ------------ */
+
+#sobre{
+    border-top: var(--border-color) solid 1px;
+    text-align: center;
+    background-color: var(--background-color);
+    padding-top: 30px;
+    padding-bottom: 35px;
+    
+}
+
+#sobre h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#sobre div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+#sobre p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    text-align: justify;
+    width: 85%;
+    color: var(--dark-text-color)
+}
+
+/* ------------ PORTFOLIO ------------ */
+
+#portfolio h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#portfolio {
+    border-top: var(--border-color) solid 1px;
+    text-align: center;
+    background-color: var(--background-color);
+    padding-top: 30px;
+    padding-bottom: 35px;
+}
+
+.card {
+    background-color: var(--card-color);
+    color: var(--light-text-color);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 20px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.card-title {
+    margin: 10px 0;
+}
+
+.card-description {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.btn-card {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--card-button-color);
+    color: var(--card-button-text-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+
+.btn-card:hover {
+    background-color: #ddd;
+    transform: scale(1.1);
+    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease;
+}
+
+/* ------------ CONTATO ------------ */
+
+#contato {
+    border-top: var(--border-color) solid 1px;
+    text-align: center;
+    background-color: var(--background-color);
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+#contato h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.flex2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.contact-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+}
+
+.icon-text {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+#contato a {
+    text-decoration: none;
+    color: var(--dark-text-color);
+}
+
+.tela_grande {
+    display:none;
+}
+
+#contato p {
+    margin-top: 30px;
+}
+
+.icon:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+span:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+
+/* ------------ FOOTER ------------ */
+
+footer {
+    background-color: var(--footer-color);
+    color: var(--light-text-color);
+    text-align: center;
+    padding: 12px 0;
+    width: 100%;
+}
+
+footer div {
+    display: flex;
+    justify-content: space-;
+    align-items: center;
+    gap: 10px;
+}
+
+footer div p {
+    font-size: 1rem;
+    margin-left: 10px;
+}
+
+
+/* Smartphone Landscape >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+@media (min-width: 576px) {
+
+    /* ------------ HEADER ------------ */
+
+    .container {
+    max-width: 540px;
+  }
+
+    header {
+        height: 60px;
+    }
+
+    label {
+        font-size: 2rem;
+        position: fixed;
+        top: 4px;
+        right: 30px;
+    }
+
+    nav ul {
+        height: 15em;
+        top: 60px;
+        right: -30%;
+        width: 25%;
+        transition: all 0.5s;
+    }
+
+    /* ------------ MAIN ------------ */
+
+    main {
+        margin-top: 23px;
+        height: 550PX;
+    }
+
+    main div {
+       padding: 35px;
+    }
+
+    /* ------------ SOBRE ------------ */
+
+    /* ---------- PORTFOLIO ---------- */
+
+    /* ----------- CONTATO ----------- */
+
+    /* ------------ FOOTER ------------ */
+
+    footer div {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    footer div p {
+        font-size: 1rem;
+    }
+
+    
+}
+
+/* Tablet Portrait >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+@media (min-width: 768px) {
+
+    /* ------------ HEADER ------------ */
+
+    .container {
+    max-width: 720px;
+  }
+
+    #inicio,
+    #sobre,
+    #portfolio {
+    scroll-margin-top: 65px;
+    }
+
+    label {
+        display: none;
+    }
+
+    nav ul {
+        position: static;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+    }
+
+    nav ul li {
+        float: left;
+    }
+
+    /* ------------ MAIN ------------ */
+
+    main {
+        height: 700PX;
+    }
+
+    main img {
+        width: 50%;
+        height: auto;
+        border-radius: 50%;
+    }
+
+    main div h1 {
+        font-size: 3.5rem;
+    }
+
+    main div p {
+        font-size: 2rem;
+    }
+
+    .button {
+        display: inline-block;
+        padding: 20px 40px;
+        text-decoration: none;
+        border-radius: 10px;
+        font-size: 2rem;
+    }
+
+    /* ------------ SOBRE ------------ */
+
+    #sobre h2 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+    }
+
+    #sobre p {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        text-align: justify;
+        width: 90%;
+    }
+
+    /* ---------- PORTFOLIO ---------- */
+
+    #portfolio h2 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+    }
+
+    .card {
+        padding: 40px;
+        border-radius: 20px;
+        margin: 20px 20px;
+    }
+
+    .card-title {
+        font-size: 2.5rem;
+        margin: 15px 0;
+    }
+
+    .card-description {
+        font-size: 1.7rem;
+        margin-bottom: 30px;
+    }
+
+    .btn-card {
+        display: inline-block;
+        padding: 20px 40px;
+        text-decoration: none;
+        border-radius: 10px;
+        font-size: 2rem;
+    }
+
+    /* ----------- CONTATO ----------- */
+
+    #contato h2 {
+        font-size: 3.5rem;
+        margin-bottom: 50px;
+    }
+
+    .icon {
+        width: 90px;
+        height: 90px;
+    }
+
+    .icon-text {
+        font-size: 2rem;
+        margin-bottom: 70px;
+    }
+
+    /* ------------ FOOTER ------------ */
+
+    footer {
+        padding: 30px 0;
+    }
+
+    footer div p {
+        font-size: 1.7rem;
+    }
+
+}
+
+/* Tablet Landscape >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+@media (min-width: 992px) {  
+
+    /* ------------ HEADER ------------ */
+
+    .container {
+    max-width: 960px;
+  }
+
+    #inicio,
+    #sobre,
+    #portfolio {
+    scroll-margin-top: 110px;
+    }
+
+    header {
+        height: 90px;
+    }
+
+    /* main {
+        margin-top: 60px;
+    } */
+
+    label {
+        display: none;
+    }
+
+    nav ul {
+        position: static;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+    }
+
+    nav ul li {
+        float: left;
+        font-size: 1.5rem;;
+    }
+
+    .logo-header img {
+        width: 20%;
+        height: 20%;
+        border-radius: 50%;
+    }
+
+    .logo-header p {
+        color: var(--light-text-color);
+        font-size: 2rem;
+    }
+
+    .tela_phone {
+        display: none;
+    }
+
+    .tela_grande {
+        display: flex;
+        justify-content:space-around;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .flex4 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* ------------ MAIN ------------ */
+
+    main {
+        margin-top: 53px;
+        height: 850PX;
+    }
+
+    main img {
+        width: 40%;
+        height: auto;
+        border-radius: 50%;
+    }
+    
+
+    /* ------------ SOBRE ------------ */
+
+    /* ---------- PORTFOLIO ---------- */
+
+    /* ----------- CONTATO ----------- */
+
+    .tela_grande {
+       height: 300px;
+       align-items: center;
+    }
+
+    .tela_grande span {
+        font-size: 1.7rem;
+        margin-top: 15px;
+    }
+
+    /* ------------ FOOTER ------------ */
+
+}
+
+/* PC >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+@media (min-width: 1200px) {
+
+    /* ------------ HEADER ------------ */
+
+    .container {
+    max-width: 1140px;
+  }
+
+    /* ------------ MAIN ------------ */
+
+    
+
+    /* ------------ SOBRE ------------ */
+
+
+    #sobre p {
+        width: 95%;
+    }
+
+
+    /* ---------- PORTFOLIO ---------- */
+
+    .Cards {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    #portfolio h2 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+    }
+
+    .card {
+        padding: 20px;
+        border-radius: 20px;
+        margin: 10px 10px;
+    }
+
+    .card-title {
+        height: 80px;
+        align-content: center;
+        font-size: 2rem;
+        margin: 15px 0;
+    }
+
+    .card-description {
+        font-size: 1.3rem;
+        margin-bottom: 30px;
+    }
+
+    .btn-card {
+        display: inline-block;
+        padding: 15px 40px;
+        text-decoration: none;
+        border-radius: 10px;
+        font-size: 1.7rem;
+    }
+
+    /* ----------- CONTATO ----------- */
+
+    #contato h2 {
+        margin-top: 30px;
+    }
+
+    .icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .tela_grande span {
+        font-size: 1.5rem;
+        margin-top: 15px;
+    }
+
+
+    /* ------------ FOOTER ------------ */
+
+}
+
+/* PC Full HD >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+@media (min-width: 1400px) {
+
+    /* ------------ HEADER ------------ */
+
+    .container {
+    max-width: 1360px;
+  }
+
+    /* ------------ MAIN ------------ */
+
+    main {
+        margin-top: 20px;
+        height: 650PX;
+    }
+
+    main img {
+        width: 25%;
+    }
+
+    main div h1 {
+        font-size: 3rem;
+    }
+
+    main div p {
+        font-size: 1.7rem;
+    }
+
+    main div {
+       padding: 35px;
+    }
+
+    .button {
+        padding: 15px 30px;
+        border-radius: 10px;
+        font-size: 1.7rem;
+    }
+
+
+    /* ------------ SOBRE ------------ */
+
+    #sobre h2 {
+        font-size: 3rem;
+    }
+
+    /* ---------- PORTFOLIO ---------- */
+
+    #portfolio h2 {
+        font-size: 3rem;
+    }
+
+    /* ----------- CONTATO ----------- */
+
+    #contato h2 {
+        font-size: 3rem;
+    }
+
+    /* ------------ FOOTER ------------ */
+
+}

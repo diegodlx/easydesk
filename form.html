@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyDesk</title>
+    <meta name="description" content="Sistema para gerenciar chamados.">
+    <link rel="icon" href="./img/favicon.png">
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>EasyDesk</h1>
+        </div>
+
+        <nav>
+            <input type="checkbox" id="check">
+                <label for="check">&#x2630;</label>
+            <ul>
+                <li><a href="index.html">Resumo</a></li>
+                <li><a href="todoschamados.html">Todos chamados</a></li>
+                <li><a href="#gestao">Gestão</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Novo Chamado</h2>
+    </main>
+
+    <section id="form">
+        <form action="" method="post"id="chamado-form">
+            <label for="solicitante">Nome:</label>
+            <input type="text" id="solicitante" name="solicitante" required>
+    
+            <label for="prioridade">Prioridade:</label>
+            <select name="prioridade" id="prioridade">
+                <option value="baixa">Baixa</option>
+                <option value="media">Média</option>
+                <option value="alta">Alta</option>
+            </select>
+    
+            <label for="problema">Problema:</label>
+            <input type="text" id="problema" name="problema" required>
+    
+            <label for="descricao">Descrição:</label>
+            <textarea id="descricao" name="descricao" required></textarea>
+    
+            <button id="form-button" type="submit">Abrir chamado</button>
+        </form>
+    </section>
+
+    <script src="form.js"></script>
+
+</body>
+</html>
