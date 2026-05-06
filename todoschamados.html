@@ -26,35 +26,48 @@
     </header>
 
     <main>
-        <h2>Chamados abertos</h2>
-
-        <!-- <button id="guardar-btn">Guardar</button> -->
-        <!-- <button id="mostrar-btn">Mostrar</button> -->
-        <button id="limpar-btn">Limpar</button>
-        
+        <h2>Todos chamados</h2>        
     </main>
 
+    <section id="filtro-chamados">
+        <h3>Filtros</h3>
+
+        <label for="filtro_id">ID:</label>
+        <input type="text" name="filtro_id" id="filtro_id">
+
+        <label for="filtro_solicitante">Solicitante:</label>
+        <input type="text" name="filtro_solicitante" id="filtro_solicitante">
+
+        <label for="prioridade">Prioridade:</label>
+        <select name="prioridade" id="prioridade">
+            <option value="">Todas</option>
+            <option value="baixa">Baixa</option>
+            <option value="media">Média</option>
+            <option value="alta">Alta</option>
+        </select>   
+        
+        <label for="complexidade">Complexidade:</label>
+        <select name="complexidade" id="complexidade">
+            <option value="">Todas</option>
+            <option value="baixa">Baixa</option>
+            <option value="media">Média</option>
+            <option value="alta">Alta</option>
+        </select>
+        
+        <label for="status">Status:</label>
+        <select name="status" id="status">
+            <option value="">Todos</option>
+            <option value="aberto">Aberto</option>
+            <option value="fechado">Fechado</option>
+        </select>
+
+        <button id="filtrar_btn">Aplicar filtros</button>
+        <button id="limpar_btn">Limpar filtros</button>
+
+    </section>
+
     <section id="todos-chamados">
-        <div class="cards-chamados">
-            <!-- <div class="card-chamado">
-                <p><strong>Solicitante:</strong> João</p>
-                <p><strong>Prioridade:</strong> Alta</p>
-                <p><strong>Problema:</strong> Computador não liga</p>
-                <p><strong>Descrição:</strong> O computador do João não está ligando desde ontem.</p>
-            </div>
-            <div class="card-chamado">
-                <p><strong>Solicitante:</strong> Maria</p>
-                <p><strong>Prioridade:</strong> Média</p>
-                <p><strong>Problema:</strong> Impressora com papel atolado</p>
-                <p><strong>Descrição:</strong> A impressora da Maria está com papel atolado e não consegue imprimir.</p>
-            </div>
-            <div class="card-chamado">
-                <p><strong>Solicitante:</strong> Carlos</p>
-                <p><strong>Prioridade:</strong> Baixa</p>
-                <p><strong>Problema:</strong> Software desatualizado</p>
-                <p><strong>Descrição:</strong> O software do Carlos está desatualizado e precisa ser atualizado.</p>
-            </div> -->
-        </div>
+        <div class="cards-chamados"></div>
     </section>
 
     <script type="module" src="todoschamados.js"></script>

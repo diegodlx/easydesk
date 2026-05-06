@@ -14,11 +14,12 @@ const addHTML = (chamados) => {
     cardsChamados.innerHTML = "";
     chamados.forEach(chamado => {
         cardsChamados.innerHTML += `
-            <div class="card-chamado">
-                <p><strong>Solicitante:</strong> ${chamado.solicitante}</p>
-                <p><strong>Prioridade:</strong> ${chamado.prioridade}</p>
-                <p><strong>Problema:</strong> ${chamado.problema}</p>
-                <p><strong>Descrição:</strong> ${chamado.descricao}</p>
+            <div class="card-chamado ${chamado.id}">
+            <p><strong>ID:</strong> ${chamado.id}</p>
+            <p><strong>Solicitante:</strong> ${chamado.solicitante}</p>
+            <p><strong>Prioridade:</strong> ${chamado.prioridade}</p>
+            <p><strong>Problema:</strong> ${chamado.problema}</p>
+            <p><strong>Prazo:</strong> ${chamado.prazo}</p>
             </div>
         `;
     });

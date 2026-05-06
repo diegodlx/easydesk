@@ -149,6 +149,151 @@ main h2 {
   letter-spacing: 0;
 }
 
+/* ------------ FILTROS ------------ */
+
+#filtro-chamados {
+  width: min(100% - 36px, 1120px);
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 5px;
+  padding: 18px;
+  margin: 18px auto 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+#filtro-chamados h3 {
+  color: var(--text);
+  font-size: 1.1rem;
+  line-height: 1.25;
+}
+
+#filtro-chamados h3 {
+  grid-column: 1 / -1;
+  margin-bottom: 5px; /* ADD POR MIM */
+}
+
+#filtro-chamados label {
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+#filtro-chamados label[for="filtro_id"] {
+  grid-column: 1 / 4;
+  grid-row: 2;
+}
+
+#filtro_id {
+  grid-column: 1 / 4;
+  grid-row: 3;
+}
+
+#filtro-chamados label[for="filtro_solicitante"] {
+  grid-column: 4 / -1;
+  grid-row: 2;
+}
+
+#filtro_solicitante {
+  grid-column: 4 / -1;
+  grid-row: 3;
+}
+
+#filtro-chamados label[for="prioridade"] {
+  grid-column: 1 / 3;
+  grid-row: 4;
+}
+
+#prioridade {
+  grid-column: 1 / 3;
+  grid-row: 5;
+}
+
+#filtro-chamados label[for="complexidade"] {
+  grid-column: 3 / 5;
+  grid-row: 4;
+}
+
+#complexidade {
+  grid-column: 3 / 5;
+  grid-row: 5;
+}
+
+#filtro-chamados label[for="status"] {
+  grid-column: 5 / -1;
+  grid-row: 4;
+}
+
+#status {
+  grid-column: 5 / -1;
+  grid-row: 5;
+}
+
+#filtro-chamados input,
+#filtro-chamados select,
+#filtro-chamados button {
+  width: 100%;
+  min-width: 0;
+  min-height: 36px;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 0.9rem;
+}
+
+#filtro-chamados input,
+#filtro-chamados select {
+  padding: 8px 10px;
+  color: var(--text);
+  background: #ffffff;
+  border: 1px solid var(--line);
+}
+
+#filtro-chamados select {
+  cursor: pointer;
+}
+
+#filtro-chamados input:focus,
+#filtro-chamados select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(23, 105, 224, 0.14);
+  outline: none;
+}
+
+#filtro-chamados button {
+  margin-top: 8px;
+  color: #ffffff;
+  background: var(--primary);
+  border: 0;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+#filtrar_btn {
+  grid-column: 1 / 4;
+  grid-row: 6;
+}
+
+#limpar_btn {
+  grid-column: 4 / -1;
+  grid-row: 6;
+  color: var(--primary-dark);
+  background: #eaf2ff;
+  border: 1px solid #cfe1ff;
+}
+
+#filtro-chamados button:hover,
+#filtro-chamados button:focus {
+  background: var(--primary-dark);
+  outline: none;
+}
+
+#limpar_btn:hover,
+#limpar_btn:focus {
+  color: #ffffff;
+}
+
 /* -------- TODOS CHAMADOS -------- */
 
 #todos-chamados {
@@ -199,6 +344,23 @@ main h2 {
     font-size: 1.18rem;
   }
 
+  #filtro-chamados {
+    width: min(100% - 28px, 1120px);
+    padding: 16px;
+    gap: 8px 6px;
+  }
+
+  #filtro-chamados label {
+    font-size: 0.78rem;
+  }
+
+  #filtro-chamados input,
+  #filtro-chamados select {
+    min-height: 34px;
+    padding: 7px 8px;
+    font-size: 0.82rem;
+  }
+
   #todos-chamados {
     width: min(100% - 28px, 1120px);
     padding: 16px;
@@ -242,6 +404,82 @@ main h2 {
 
   main h2 {
     font-size: 2rem;
+  }
+
+  #filtro-chamados {
+    grid-template-columns: minmax(170px, 1.2fr) minmax(120px, 0.85fr) repeat(3, minmax(0, 1fr)) auto auto;
+    align-items: end;
+    gap: 10px 12px;
+    padding: 24px;
+    margin-top: 24px;
+  }
+
+  #filtro-chamados h3 {
+    grid-column: 1 / -1;
+  }
+
+  #filtro-chamados label[for="filtro_id"] {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  #filtro_id {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  #filtro-chamados label[for="filtro_solicitante"] {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  #filtro_solicitante {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
+  #filtro-chamados label[for="prioridade"] {
+    grid-column: 3;
+    grid-row: 2;
+  }
+
+  #prioridade {
+    grid-column: 3;
+    grid-row: 3;
+  }
+
+  #filtro-chamados label[for="complexidade"] {
+    grid-column: 4;
+    grid-row: 2;
+  }
+
+  #complexidade {
+    grid-column: 4;
+    grid-row: 3;
+  }
+
+  #filtro-chamados label[for="status"] {
+    grid-column: 5;
+    grid-row: 2;
+  }
+
+  #status {
+    grid-column: 5;
+    grid-row: 3;
+  }
+
+  #filtrar_btn,
+  #limpar_btn {
+    grid-row: 3;
+    grid-column: 6;
+    width: auto;
+    min-width: 104px;
+    margin-top: 0;
+    padding: 0 14px;
+  }
+
+  #limpar_btn {
+    grid-column: 7;
   }
 
   #todos-chamados {
