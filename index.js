@@ -3,11 +3,9 @@ const cardsChamados = document.querySelector('.cards-chamados');
 window.onload = function() {
     const chamadosSalvos = JSON.parse(localStorage.getItem('chamados'));
     if (chamadosSalvos) {
-        // console.log(chamadosSalvos);
-        // alert('Chamados mostrados no console!');
-        addHTML(chamadosSalvos);
+        const chamadosAbertos = chamadosSalvos.filter(chamado => chamado.status === "Aberto");
+        addHTML(chamadosAbertos);
     } else {
-        // alert('Nenhum chamado encontrado no localStorage!');
         cardsChamados.innerHTML = "Nenhum chamado até o momento.";
     }
 };
