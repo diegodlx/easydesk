@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyDesk</title>
+    <meta name="description" content="Sistema para gerenciar chamados.">
+    <link rel="icon" href="./img/favicon.png">
+    <link rel="stylesheet" href="../css/resumo.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>EasyDesk</h1>
+        </div>
+
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check">&#x2630;</label>
+            <ul>
+                <li><a href="../html/form.html">Novo chamado</a></li>
+                <li><a href="../html/todoschamados.html">Todos chamados</a></li>
+                <li><a href="../html/index.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Bem-vindo ao EasyDesk</h2>
+    </main>
+
+    <section id="resumo">
+        <div class="resume-card status">
+            <h3>Resumo dos Chamados</h3>
+            <div class="dados dados-resumo">
+            </div>
+        </div>
+
+        <div class="resume-card priority">
+            <h3>Prioridade de chamados abertos</h3>
+            <div class="dados dados-prioridade">
+            </div>
+        </div>
+
+        <div class="resume-card deadline">
+            <h3>Prazo de chamados abertos</h3>
+            <div class="dados dados-deadline">
+            </div>
+        </div>
+    </section>
+
+    <section id="todos-chamados">
+        <h3>Chamados abertos e classificados</h3>
+        <div class="cards-chamados"></div>
+    </section>
+
+    <script type="module" src="../js/resumo.js"></script>
+
+</body>
+</html>
