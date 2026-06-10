@@ -6,7 +6,7 @@
     <title>EasyDesk</title>
     <meta name="description" content="Sistema para gerenciar chamados.">
     <link rel="icon" href="./img/favicon.png">
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
     <header>
@@ -23,16 +23,21 @@
         <form action="" method="post" id="login-form">
             <label for="user">Login:</label>
             <select name="user" id="user">
-                <option value="form.html">Usuário</option>
-                <option value="index.html">Suporte</option>
-                <option value="todoschamados.html">Gestor</option>
+                <option value="../html/form.html">Usuário</option>
+                <option value="../html/index.html">Suporte</option>
+                <option value="../html/todoschamados.html">Gestor</option>
             </select>
     
             <button id="login-button" type="submit">Entrar</button>
         </form>
     </section>
 
-    <script type="module" src="login.js"></script>
+    <section>
+        <button id="incluir" type="button">Incluir Dados</button>
+        <button id="clear" type="button">Limpar Dados</button>
+    </section>
+
+    <script type="module" src="../js/login.js"></script>
 
 </body>
 </html>
