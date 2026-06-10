@@ -47,15 +47,9 @@ const fillResumo = (chamados) => {
     }, {});
 
     resumoPrioridade.innerHTML = `
-<<<<<<< HEAD
     <p>Alta: ${dadosPrioridade.alta || 0}</p>
     <p>Média: ${dadosPrioridade.media || 0}</p>
     <p>Baixa: ${dadosPrioridade.baixa || 0}</p>
-=======
-    <p>Alta: ${dadosPrioridade.Alta || 0}</p>
-    <p>Média: ${dadosPrioridade.Média || 0}</p>
-    <p>Baixa: ${dadosPrioridade.Baixa || 0}</p>
->>>>>>> f5041750a36b3801d5d0c38e584dcb71af57d370
     `;
 
     const chamadosClassificados = chamados.filter(chamado => chamado.complexidade !== "a definir" && chamado.prazo !== "a definir");
