@@ -11,7 +11,7 @@ const userSelect = document.getElementById('user');
 userLogin.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    console.log(userSelect.value);
+    localStorage.setItem("usuario", userSelect.options[userSelect.selectedIndex].text);
 
     window.location.href = userSelect.value;
 });

@@ -6,9 +6,11 @@ const complexidadeSelect = document.getElementById('complexidade');
 const statusSelect = document.getElementById('status');
 const filtrarBtn = document.getElementById('filtrar_btn');
 const limparBtn = document.getElementById('limpar_btn');
+const navList = document.getElementById("nav");
 
 
 window.onload = function() {
+    isSuporte();
     const chamadosSalvos = JSON.parse(localStorage.getItem('chamados'));
     if (chamadosSalvos) {
         addHTML(chamadosSalvos);
@@ -51,3 +53,14 @@ limparBtn.addEventListener('click', function(e) {
     const chamadosSalvos = JSON.parse(localStorage.getItem('chamados'));
     addHTML(chamadosSalvos);
 });
+
+const isSuporte = () => {
+    const usuario = localStorage.getItem("usuario");
+    if (usuario === "Suporte") {
+        navList.innerHTML = `
+        <li><a href="../html/classificar.html">Não classificados</a></li>
+        <li><a href="../html/atendimento.html">Em atendimento</a></li>
+        <li><a href="../html/index.html">Logout</a></li>
+        `;
+    };
+};

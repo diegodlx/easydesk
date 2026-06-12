@@ -32,8 +32,8 @@ export const todosChamados = [
         data: "2024-06-03",
         hora: "15:00:00",
         status: "Aberto",
-        prazo: "2024-06-04",
-        complexidade: "baixa"
+        prazo: "a definir",
+        complexidade: "a definir"
     },
     {
         id: "20240604140045", // ano mês dia hora minuto segundo
@@ -44,8 +44,8 @@ export const todosChamados = [
         data: "2024-06-04",
         hora: "14:00:45",
         status: "Aberto",
-        prazo: "2024-06-10",
-        complexidade: "alta"
+        prazo: "a definir",
+        complexidade: "a definir"
     },
     {
         id: "20240605110015", // ano mês dia hora minuto segundo
