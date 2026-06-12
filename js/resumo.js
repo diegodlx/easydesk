@@ -38,7 +38,7 @@ const fillResumo = (chamados) => {
     resumoChamado.innerHTML = `
     <p>Abertos: ${dadosResumo.Aberto || 0}</p>
     <p>Fechados: ${dadosResumo.Fechado || 0}</p>
-    <p>Total: ${dadosResumo.Aberto + dadosResumo.Fechado || 0}</p>
+    <p>Total: ${(dadosResumo.Aberto + (dadosResumo.Fechado || 0)) || 0}</p>
     `;
 
     const dadosPrioridade = chamados.reduce((acc, chamado) => {
