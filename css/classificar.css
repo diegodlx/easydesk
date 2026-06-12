@@ -290,6 +290,128 @@ main h2 {
   color: var(--text);
 }
 
+/* -------- MODAL CHAMADO -------- */
+
+#modal-chamado {
+  width: min(100% - 32px, 520px);
+  max-height: min(86vh, 720px);
+  margin: auto;
+  padding: 0;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.24);
+  overflow: hidden;
+}
+
+#modal-chamado::backdrop {
+  background: rgba(15, 23, 42, 0.48);
+  backdrop-filter: blur(3px);
+}
+
+#modal-content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  max-height: min(86vh, 720px);
+  padding: 18px;
+  overflow-y: auto;
+}
+
+#modal-content .modal {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 10px;
+}
+
+#modal-content h3 {
+  padding-bottom: 12px;
+  color: var(--text);
+  border-bottom: 1px solid var(--line);
+  font-size: 1.15rem;
+  line-height: 1.25;
+  text-align: center;
+}
+
+#modal-content p {
+  padding: 10px 12px;
+  color: var(--muted);
+  background: var(--surface-muted);
+  border-radius: 8px;
+  font-size: 0.94rem;
+  line-height: 1.4;
+}
+
+#modal-content strong {
+  color: var(--text);
+}
+
+#modal-content label {
+  margin-top: 4px;
+  padding: 9px 10px;
+  color: var(--text);
+  background: #eaf2ff;
+  border: 1px solid rgba(23, 105, 224, 0.24);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+#modal-content select,
+#modal-content button {
+  width: 100%;
+  min-height: 44px;
+  border-radius: 8px;
+  font: inherit;
+}
+
+#modal-content select {
+  min-height: 32px;
+  padding: 6px 10px;
+  color: var(--text);
+  background: #fbfdff;
+  border: 1px solid rgba(23, 105, 224, 0.45);
+  cursor: pointer;
+}
+
+#modal-content select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(23, 105, 224, 0.18);
+  outline: none;
+}
+
+#modal-content button {
+  border: 0;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+#btn-salvar {
+  color: #ffffff;
+  background: var(--primary);
+}
+
+#btn-salvar:hover,
+#btn-salvar:focus {
+  background: var(--primary-dark);
+  outline: none;
+}
+
+#btn-fechar {
+  color: var(--text);
+  background: #eaf2ff;
+  border: 1px solid rgba(23, 105, 224, 0.35);
+}
+
+#btn-fechar:hover,
+#btn-fechar:focus {
+  color: #ffffff;
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+  outline: none;
+}
+
 @media (max-width: 380px) {
   header {
     padding-inline: 14px;
@@ -301,6 +423,14 @@ main h2 {
 
   .dados {
     grid-template-columns: 1fr;
+  }
+
+  #modal-chamado {
+    width: min(100% - 24px, 520px);
+  }
+
+  #modal-content {
+    padding: 16px;
   }
 }
 
@@ -363,5 +493,36 @@ main h2 {
 
   .cards-chamados {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  #modal-chamado {
+    width: min(100% - 64px, 620px);
+  }
+
+  #modal-content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    padding: 24px;
+  }
+
+  #modal-content .modal {
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  #modal-content h3,
+  #modal-content p:nth-of-type(1),
+  #modal-content p:nth-of-type(6) {
+    grid-column: 1 / -1;
+  }
+
+  #modal-content label {
+    grid-column: 1;
+    align-self: center;
+  }
+
+  #modal-content select {
+    grid-column: 2;
   }
 }
