@@ -1,7 +1,6 @@
 const cardsChamados = document.querySelector('.cards-chamados');
 const modal = document.getElementById('modal-chamado');
 const modalContent = document.getElementById('modal-content');
-const btnFechar = document.getElementById('btn-fechar');
 
 window.onload = function() {
     const chamadosSalvos = JSON.parse(localStorage.getItem('chamados'));
