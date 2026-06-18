@@ -60,9 +60,9 @@ const isSuporte = () => {
     const usuario = localStorage.getItem("usuario");
     if (usuario === "Suporte") {
         navList.innerHTML = `
-        <li><a href="../html/classificar.html">Não classificados</a></li>
-        <li><a href="../html/atendimento.html">Em atendimento</a></li>
-        <li><a href="../html/index.html">Logout</a></li>
+        <li><a href="classificar.html">Não classificados</a></li>
+        <li><a href="atendimento.html">Em atendimento</a></li>
+        <li><a href="index.html">Logout</a></li>
         `;
     };
 };
