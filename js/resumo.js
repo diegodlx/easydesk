@@ -94,7 +94,6 @@ cardsChamados.addEventListener("click", (e) => {
 
     const btnFechar = document.getElementById('btn-fechar');
     const btnCancelar = document.getElementById('btn-cancelar');
-    const complexidade = document.getElementById('complexidade');
 
     btnFechar.addEventListener('click', () => {
     modal.close();
