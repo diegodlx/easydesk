@@ -5,9 +5,9 @@ export const todosChamados = [
         prioridade: "alta",
         problema: "Computador não liga",
         descricao: "O computador do escritório não está ligando. Já tentei verificar a fonte de alimentação e os cabos, mas não obtive sucesso.",
-        data: "2024-06-01 10:30",
+        data: "2024-06-01",
         hora: "10:30:33",
-        status: "Aberto",
+        status: "Atendimento",
         prazo: "2024-06-08",
         complexidade: "alta"
     },
@@ -19,7 +19,7 @@ export const todosChamados = [
         descricao: "A impressora não está imprimindo corretamente. Já tentei reiniciar o serviço e verificar a conexão, mas o problema persiste.",
         data: "2024-06-02",
         hora: "12:00:21",
-        status: "Aberto",
+        status: "Atendimento",
         prazo: "2024-06-05",
         complexidade: "media"
     },
