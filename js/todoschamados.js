@@ -7,6 +7,8 @@ const statusSelect = document.getElementById('status');
 const filtrarBtn = document.getElementById('filtrar_btn');
 const limparBtn = document.getElementById('limpar_btn');
 const navList = document.getElementById("nav");
+const modal = document.getElementById('modal-chamado');
+const modalContent = document.getElementById('modal-content');
 
 
 window.onload = function() {
@@ -23,7 +25,7 @@ const addHTML = (chamados) => {
     cardsChamados.innerHTML = "";
     chamados.forEach(chamado => {
         cardsChamados.innerHTML += `
-            <div class="card-chamado ${chamado.id}">
+            <div class="card-chamado" id="${chamado.id}">
             <p><strong>ID:</strong> ${chamado.id}</p>
             <p><strong>Solicitante:</strong> ${chamado.solicitante}</p>
             <p><strong>Prioridade:</strong> ${chamado.prioridade}</p>
@@ -64,3 +66,37 @@ const isSuporte = () => {
         `;
     };
 };
+
+cardsChamados.addEventListener("click", (e) => {
+    const id = e.target.closest(".card-chamado").id;
+    const chamadosSalvos = JSON.parse(localStorage.getItem('chamados'));
+    const chamadoModal = chamadosSalvos.filter(chamado => chamado.id === id)[0];
+    modalContent.innerHTML = `
+        <div class="modal" id="${id}">
+        <h3>Detalhes do chamado</h3>
+        <p><strong>ID:</strong> ${chamadoModal.id}</p>
+        <p><strong>Solicitante:</strong> ${chamadoModal.solicitante}</p>
+        <p><strong>Abertura:</strong> ${chamadoModal.data}</p>
+        <p><strong>Problema:</strong> ${chamadoModal.problema}</p>
+        <p><strong>Prioridade:</strong> ${chamadoModal.prioridade}</p>
+        <p><strong>Complexidade:</strong> ${chamadoModal.complexidade}</p>
+        <p><strong>Prazo:</strong> ${chamadoModal.prazo}</p>
+        <p><strong>Descrição:</strong> ${chamadoModal.descricao}</p>
+        <button id="btn-fechar">Fechar</button>
+        </div>
+    `;
+
+    const btnFechar = document.getElementById('btn-fechar');
+
+    btnFechar.addEventListener('click', () => {
+    modal.close();
+    });
+
+    modal.showModal()
+});
+
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.close();
+  }
+});
