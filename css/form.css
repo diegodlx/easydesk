@@ -216,6 +216,51 @@ button:focus {
   outline: none;
 }
 
+/* -------- MODAL CONFIRMACAO -------- */
+
+#confirmacao {
+  width: min(100% - 32px, 420px);
+  margin: auto;
+  padding: 0;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.24);
+  overflow: hidden;
+}
+
+#confirmacao::backdrop {
+  background: rgba(15, 23, 42, 0.48);
+  backdrop-filter: blur(3px);
+}
+
+#confirmacao p {
+  margin: 18px 18px 0;
+  padding: 14px 12px;
+  color: #0c7a66;
+  background: #e7f8f3;
+  border: 1px solid rgba(24, 165, 143, 0.24);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.4;
+  text-align: center;
+}
+
+#fechar-dialog {
+  width: calc(100% - 36px);
+  margin: 14px 18px 18px;
+  color: #ffffff;
+  background: var(--primary);
+}
+
+#fechar-dialog:hover,
+#fechar-dialog:focus {
+  background: var(--primary-dark);
+  outline: none;
+}
+
 @media (max-width: 380px) {
   header {
     padding-inline: 14px;
@@ -228,6 +273,20 @@ button:focus {
   #form {
     width: min(100% - 28px, 760px);
     padding: 16px;
+  }
+
+  #confirmacao {
+    width: min(100% - 24px, 420px);
+  }
+
+  #confirmacao p {
+    margin: 16px 16px 0;
+    font-size: 0.95rem;
+  }
+
+  #fechar-dialog {
+    width: calc(100% - 32px);
+    margin: 12px 16px 16px;
   }
 }
 
