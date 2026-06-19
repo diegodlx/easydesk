@@ -70,8 +70,6 @@ const addHTML = (chamados) => {
     });
 };
 
-
-
 cardsChamados.addEventListener("click", (e) => {
     const id = e.target.closest(".card-chamado").id;
     const chamadosSalvos = JSON.parse(localStorage.getItem('chamados'));

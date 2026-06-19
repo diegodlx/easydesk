@@ -7,9 +7,7 @@
 :root {
   --bg: #f4f7fb;
   --surface: #ffffff;
-  --surface-muted: #eef3f8;
   --text: #17202e;
-  --muted: #64748b;
   --line: #d8e0ea;
   --primary: #1769e0;
   --primary-dark: #0f4fae;
@@ -57,7 +55,6 @@ header {
   color: var(--primary-dark);
   font-size: 1.35rem;
   font-weight: 800;
-  letter-spacing: 0;
   white-space: nowrap;
 }
 
@@ -65,7 +62,6 @@ header {
 
 main {
   padding: 96px 18px 24px;
-  text-align: left;
   background: linear-gradient(135deg, var(--primary-dark), var(--primary));
   color: #ffffff;
 }
@@ -75,7 +71,6 @@ main h2 {
   margin: 0 auto;
   font-size: 1.55rem;
   line-height: 1.2;
-  letter-spacing: 0;
 }
 
 /* ------------ CREDENCIAIS ------------ */

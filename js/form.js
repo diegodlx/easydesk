@@ -1,16 +1,12 @@
 const form = document.getElementById('chamado-form');
 
 form.addEventListener('submit', function (event) {
-  // 1. Previne o envio padrão do formulário (recarregar página)
   event.preventDefault();
 
-  // 2. Captura todos os dados usando o atributo 'name'
   const formData = new FormData(form);
 
-  // 3. Converte FormData para um objeto JavaScript simples
   const dados = Object.fromEntries(formData);
 
-  // 4. Exibe o objeto no console
   console.log(dados);
 
   if (!conferePreenchimento(dados)) {
