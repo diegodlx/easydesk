@@ -14,26 +14,26 @@ const modalContent = document.getElementById('modal-content');
 window.onload = function() {
     isSuporte();
     const chamadosSalvos = JSON.parse(localStorage.getItem('chamados'));
-    if (chamadosSalvos) {
-        addHTML(chamadosSalvos);
-    } else {
-        cardsChamados.innerHTML = "Nenhum chamado até o momento.";
-    }
+    addHTML(chamadosSalvos);
 };
 
 const addHTML = (chamados) => {
     cardsChamados.innerHTML = "";
-    chamados.forEach(chamado => {
-        cardsChamados.innerHTML += `
-            <div class="card-chamado" id="${chamado.id}">
-            <p><strong>ID:</strong> ${chamado.id}</p>
-            <p><strong>Solicitante:</strong> ${chamado.solicitante}</p>
-            <p><strong>Prioridade:</strong> ${chamado.prioridade}</p>
-            <p><strong>Problema:</strong> ${chamado.problema}</p>
-            <p><strong>Prazo:</strong> ${chamado.prazo}</p>
-            </div>
-        `;
-    });
+    if (chamados.length > 0) {
+        chamados.forEach(chamado => {
+            cardsChamados.innerHTML += `
+                <div class="card-chamado" id="${chamado.id}">
+                <p><strong>ID:</strong> ${chamado.id}</p>
+                <p><strong>Solicitante:</strong> ${chamado.solicitante}</p>
+                <p><strong>Prioridade:</strong> ${chamado.prioridade}</p>
+                <p><strong>Problema:</strong> ${chamado.problema}</p>
+                <p><strong>Prazo:</strong> ${chamado.prazo}</p>
+                </div>
+            `;
+        });
+    } else {
+        cardsChamados.innerHTML = "Nenhum chamado até o momento.";
+    }
 };
 
 filtrarBtn.addEventListener('click', function(e) {

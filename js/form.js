@@ -20,7 +20,7 @@ form.addEventListener('submit', function (event) {
   };
 
   form.reset();
-  window.location.href = "index.html";  
+  window.location.href = "resumo.html";  
 });
 
 

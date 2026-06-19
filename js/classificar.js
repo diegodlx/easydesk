@@ -4,27 +4,27 @@ const modalContent = document.getElementById('modal-content');
 
 window.onload = function() {
     const chamadosSalvos = JSON.parse(localStorage.getItem('chamados'));
-    if (chamadosSalvos) {
-        const chamadosAbertos = chamadosSalvos.filter(chamado => chamado.complexidade === "a definir");
-        addHTML(chamadosAbertos);
-    } else {
-        cardsChamados.innerHTML = "Nenhum chamado para classificar até o momento.";
-    }
+    const chamadosAbertos = chamadosSalvos.filter(chamado => chamado.complexidade === "a definir");
+    addHTML(chamadosAbertos);
 };
 
 const addHTML = (chamados) => {
     cardsChamados.innerHTML = "";
-    chamados.forEach(chamado => {
-        cardsChamados.innerHTML += `
-            <div class="card-chamado" id="${chamado.id}">
-            <p><strong>ID:</strong> ${chamado.id}</p>
-            <p><strong>Solicitante:</strong> ${chamado.solicitante}</p>
-            <p><strong>Prioridade:</strong> ${chamado.prioridade}</p>
-            <p><strong>Problema:</strong> ${chamado.problema}</p>
-            <p><strong>Prazo:</strong> ${chamado.prazo}</p>
-            </div>
-        `;
-    });
+    if (chamados.length > 0) {
+        chamados.forEach(chamado => {
+            cardsChamados.innerHTML += `
+                <div class="card-chamado" id="${chamado.id}">
+                <p><strong>ID:</strong> ${chamado.id}</p>
+                <p><strong>Solicitante:</strong> ${chamado.solicitante}</p>
+                <p><strong>Prioridade:</strong> ${chamado.prioridade}</p>
+                <p><strong>Problema:</strong> ${chamado.problema}</p>
+                <p><strong>Prazo:</strong> ${chamado.prazo}</p>
+                </div>
+            `;
+        });
+    } else {
+        cardsChamados.innerHTML = "Nenhum chamado para classificar.";
+    };
 };
 
 cardsChamados.addEventListener("click", (e) => {
